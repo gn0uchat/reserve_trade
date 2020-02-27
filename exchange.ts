@@ -25,18 +25,12 @@ export class exchange{
 		}
 	}
 
-	private increase_Rt( x: number ): number{
+	increase_Rt( x: number ): number{
 		if( ( x > 0 ) && ( x <= this.Rt_range[ 1 ] - this.Rt )){
-			let new_Ru = this.product_const / ( this.Rt + x );
-			if( new_Ru < this.Ru ){
-				let delta = this.Ru - new_Ru;
-
-				this.Rt += x;
-				this.Ru = new_Ru;
-				return delta;
-			}else{
-				throw Error( "Rt increase not enough" );
-			}
+			const y = this['product_const'] / (this['Rt'] + x) - this['Ru']
+			this.Rt += x;
+			this.Ru += y;
+			return y;
 		}else{
 			throw Error( "Rt exceed valid range" );
 		}

@@ -11,6 +11,6 @@ describe('exchange class', () => {
 	});
 	it('put 6000 twd should get 375 usd', () => {
 		let ex = new exchange( 10000, 1000 );
-		expect( (ex as any).increase_Rt( 6000 ) ).to.equal( 375 );
+		expect(ex.increase_Rt( 6000 ) ).to.equal( -375 );
 	});
 });
