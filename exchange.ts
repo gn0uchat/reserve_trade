@@ -29,8 +29,9 @@ export class exchange{
 		if( ( x > 0 ) && ( x <= this.Rt_range[ 1 ] - this.Rt )){
 			let new_Ru = this.product_const / ( this.Rt + x );
 			if( new_Ru < this.Ru ){
-				this.Rt += x;
 				let delta = this.Ru - new_Ru;
+
+				this.Rt += x;
 				this.Ru = new_Ru;
 				return delta;
 			}else{
@@ -45,8 +46,9 @@ export class exchange{
 		if( ( y > 0 ) && ( y <= this.Ru_range[ 1 ] - this.Ru )){
 			let new_Rt = this.product_const / ( this.Ru + y );
 			if( new_Rt < this.Rt ){
-				this.Ru += y;
 				let delta = this.Rt - new_Rt;
+
+				this.Ru += y;
 				this.Rt = new_Rt;
 				return delta;
 			}else{
@@ -58,7 +60,7 @@ export class exchange{
 	}
 
 	public reserve_state(): string{
-		return( "usd reserve: " + this.Ru + " , twd reserve " + this.Rt );
+		return( "TWD reserve: " + this.Rt + " , USD reserve: " + this.Ru );
 	}
 
 	public put_t( x: number ): string{
