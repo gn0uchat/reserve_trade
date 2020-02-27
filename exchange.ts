@@ -66,7 +66,7 @@ export class exchange{
 	public put_t( x: number ): string{
 		try{
 			let y = this.increase_Rt( x );	
-			return( "put in " + x + " twd, withdraw " + y + " usd");
+			return( "put in " + x + " TWD, withdraw " + y + " USD");
 		}catch( e ){
 			return( "invalid operation" );
 		}
@@ -75,7 +75,7 @@ export class exchange{
 	public put_u( y: number ): string{
 		try{
 			let x = this.increase_Ru( y );
-			return( "put in " + y + " usd, withdraw " + x + " twd");
+			return( "put in " + y + " USD, withdraw " + x + " TWD");
 		}catch( e ){
 			return( "invalid operation" );
 		}

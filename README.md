@@ -6,5 +6,5 @@
 ## Run command:
 	npm start
 
-## test command:
+## Test command:
 	npm test
